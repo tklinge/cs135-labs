@@ -1,6 +1,6 @@
 -- Exercise set 7
 
-module Set7 where
+module Lab7 where
 
 import Mooc.Todo
 import Data.List

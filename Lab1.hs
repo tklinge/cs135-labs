@@ -1,19 +1,10 @@
--- Welcome to the first exercise set of the Haskell Mooc! Edit this
--- file according to the instructions, and check your answers with
---
---   stack runhaskell Set1Test.hs
---
--- You can also play around with your answers in GHCi with
---
---   stack ghci Set1.hs
---
 -- This set contains exercises on
 --   * defining functions
 --   * basic expressions
 --   * pattern matching
 --   * recursion
 
-module Set1 where
+module Lab1 where
 
 import Mooc.Todo
 

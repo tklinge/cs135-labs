@@ -10,7 +10,7 @@
 --  * length
 --  * null
 
-module Set2a where
+module Lab2a where
 
 import Mooc.Todo
 

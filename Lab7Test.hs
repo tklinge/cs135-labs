@@ -1,6 +1,6 @@
 {-# LANGUAGE TemplateHaskell, ScopedTypeVariables, StandaloneDeriving, DeriveGeneric #-}
 
-module Set7Test where
+module Lab7Test where
 
 import Data.List
 import Data.List.NonEmpty (NonEmpty ((:|)))
@@ -11,7 +11,7 @@ import Test.QuickCheck
 import Mooc.Th
 import Mooc.Test
 
-import Set7 hiding (bake)
+import Lab7 hiding (bake)
 
 main = score tests
 

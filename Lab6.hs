@@ -1,6 +1,6 @@
 -- Exercise set 6: defining classes and instances
 
-module Set6 where
+module Lab6 where
 
 import Mooc.Todo
 import Data.Char (toLower)

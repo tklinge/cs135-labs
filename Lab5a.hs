@@ -3,7 +3,7 @@
 -- * defining algebraic datatypes
 -- * recursive datatypes
 
-module Set5a where
+module Lab5a where
 
 import Mooc.Todo
 

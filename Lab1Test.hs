@@ -1,6 +1,6 @@
 {-# LANGUAGE TemplateHaskell #-}
 
-module Set1Test where
+module Lab1Test where
 
 import Data.List
 import Test.QuickCheck
@@ -8,7 +8,7 @@ import Test.QuickCheck
 import Mooc.Th
 import Mooc.Test
 
-import Set1
+import Lab1
 
 main = score tests
 

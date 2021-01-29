@@ -1,6 +1,6 @@
 {-# LANGUAGE TemplateHaskell, ScopedTypeVariables #-}
 
-module Set2aTest where
+module Lab2aTest where
 
 import Data.Char
 import Data.List
@@ -9,7 +9,7 @@ import Test.QuickCheck
 import Mooc.Th
 import Mooc.Test
 
-import Set2a
+import Lab2a
 
 main = score tests
 

@@ -1,6 +1,6 @@
 {-# LANGUAGE TemplateHaskell, ScopedTypeVariables #-}
 
-module Set6Test where
+module Lab6Test where
 
 import Data.List
 import Data.Maybe
@@ -11,7 +11,7 @@ import Test.QuickCheck
 import Mooc.Th
 import Mooc.Test
 
-import Set6
+import Lab6
 
 testEquals x y exp = $(testing [|x == y|]) (?==exp)
 

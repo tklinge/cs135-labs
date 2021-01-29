@@ -1,6 +1,6 @@
 -- Exercise set 4b: folds
 
-module Set4b where
+module Lab4b where
 
 import Mooc.Todo
 

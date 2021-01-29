@@ -23,7 +23,7 @@
 
 {-# LANGUAGE NoImplicitPrelude #-}
 
-module Set3b where
+module Lab3b where
 
 import Mooc.LimitedPrelude
 import Mooc.Todo

@@ -14,7 +14,7 @@
 --  * minimum
 --  * sort
 
-module Set4a where
+module Lab4a where
 
 import Mooc.Todo
 import Data.List

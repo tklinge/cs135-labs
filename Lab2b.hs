@@ -1,4 +1,4 @@
-module Set2b where
+module Lab2b where
 
 import Mooc.Todo
 

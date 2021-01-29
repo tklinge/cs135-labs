@@ -3,7 +3,7 @@
 --  * lists
 --  * functional programming
 
-module Set3a where
+module Lab3a where
 
 import Mooc.Todo
 

@@ -1,4 +1,4 @@
-module Set8 where
+module Lab8 where
 
 import Data.Char (intToDigit)
 

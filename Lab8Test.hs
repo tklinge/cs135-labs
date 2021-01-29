@@ -1,6 +1,6 @@
 {-# LANGUAGE TemplateHaskell, ScopedTypeVariables #-}
 
-module Set8Test where
+module Lab8Test where
 
 import Data.List hiding (union)
 import Test.QuickCheck
@@ -8,7 +8,7 @@ import Test.QuickCheck
 import Mooc.Th
 import Mooc.Test
 
-import Set8 hiding (main)
+import Lab8 hiding (main)
 
 main = score [(1,"dotAndLine",[ex1_line, ex1_dot, ex1_black, ex1_line_far])
              ,(2,"blend",[ex2_blendColor, ex2_render, ex2_solid, ex2_const])
