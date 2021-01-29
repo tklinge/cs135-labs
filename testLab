@@ -1,6 +1,0 @@
-#!/bin/bash
-
-tmp_dir=$(mktemp -d)
-echo $tmp_dir
-
-rm -rf $tmp_dir
