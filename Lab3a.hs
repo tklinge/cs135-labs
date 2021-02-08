@@ -5,8 +5,6 @@
 
 module Lab3a where
 
-import Mooc.Todo
-
 -- Some imports you'll need.
 -- Do not add any other imports! :)
 import Data.Char
