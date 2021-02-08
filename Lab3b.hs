@@ -25,8 +25,8 @@
 
 module Lab3b where
 
-import Mooc.LimitedPrelude
-import Mooc.Todo
+import Prelude (Int, Integer, Bool(..), Ordering(..), Eq(..), Ord(..),
+  Num(..), Integral(..), Maybe(..), (&&), (||), not, otherwise, undefined)
 
 ------------------------------------------------------------------------------
 -- Ex 1: given numbers start, count and end, build a list that starts

@@ -33,13 +33,15 @@ import Data.Ord
 -- you remove the Eq a => constraint from the type!
 
 allEqual :: Eq a => [a] -> Bool
-allEqual xs = todo
+allEqual []  = True
+allEqual [x] = True
+allEqual (x:y:zs) = x == y && allEqual (y:zs)
 
 ------------------------------------------------------------------------------
 -- Ex 2: implement the function distinct which returns True if all
 -- values in a list are different.
 --
--- Hint: a certain function from the lecture material can make this
+-- Hint: a certain function from the reading can make this
 -- really easy for you.
 --
 -- Examples:
@@ -48,7 +50,8 @@ allEqual xs = todo
 --   distinct [1,2] ==> True
 
 distinct :: Eq a => [a] -> Bool
-distinct = todo
+distinct [] = True
+distinct (x:xs) = x `notElem` xs && distinct xs
 
 ------------------------------------------------------------------------------
 -- Ex 3: implement the function middle that returns the middle value
@@ -61,7 +64,9 @@ distinct = todo
 --   middle 'b' 'a' 'c'  ==> 'b'
 --   middle 1 7 3        ==> 3
 
-middle = todo
+middle :: Ord a => a -> a -> a -> a
+middle x y z = let [_, mid, _] = sort [x, y, z]
+               in mid
 
 ------------------------------------------------------------------------------
 -- Ex 4: return the range of an input list, that is, the difference
