@@ -6,8 +6,6 @@
 
 module Lab1 where
 
-import Mooc.Todo
-
 ------------------------------------------------------------------------------
 -- Ex 1: define variables one and two. They should have type Int and
 -- values 1 and 2, respectively.
