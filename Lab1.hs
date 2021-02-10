@@ -10,8 +10,11 @@ module Lab1 where
 -- Ex 1: define variables one and two. They should have type Int and
 -- values 1 and 2, respectively.
 
-one = 1 :: Int
-two = 2 :: Int
+one :: Int
+one = 1
+
+two :: Int
+two = 2
 
 ------------------------------------------------------------------------------
 -- Ex 2: define the function double of type Integer->Integer. Double
@@ -42,6 +45,7 @@ quadruple x = double (double x)
 --   distance 0 0 1 1  ==>  1.4142135...
 --   distance 1 1 4 5  ==>  5.0
 
+distance :: Double -> Double -> Double -> Double -> Double
 distance x1 y1 x2 y2 = sqrt ((x1 - x2)^2 + (y1 - y2)^2)
 
 ------------------------------------------------------------------------------
@@ -73,11 +77,10 @@ checkPassword password = if password == "swordfish" || password == "mellon"
 -- in grams, and returns the cost in credits.
 
 postagePrice :: Int -> Int
-postagePrice x = if x <= 500
-                 then 250
-                 else if x > 5000
-                      then 6000
-                      else 300 + x
+postagePrice x
+  | x <= 500  = 250
+  | x > 5000  = 6000
+  | otherwise = 300 + x
 
 ------------------------------------------------------------------------------
 -- Ex 8: define a function isZero that returns True if it is given an
