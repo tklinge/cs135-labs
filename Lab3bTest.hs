@@ -12,22 +12,19 @@ import Lab3b
 
 main = score tests
 
-tests = [(1,"buildList",[imports, ex1_buildList])
-        ,(2,"sums",[imports, ex2_sums])
-        ,(3,"mylast",[imports, ex3_mylast_nonempty, ex3_mylast_empty])
-        ,(4,"indexDefault",[imports, ex4_indexDefault_ok, ex4_indexDefault_fail])
-        ,(5,"sorted",[imports, ex5_sorted_empty, ex5_sorted])
-        ,(6,"sumsOf",[imports, ex6_sumsOf])
-        ,(7,"merge",[imports, ex7_merge])
-        ,(8,"mymaximum",[imports, ex8_mymaximum_max, ex8_mymaximum_min, ex8_mymaximum_empty])
-        ,(9,"map2",[imports, ex9_map2_1, ex9_map2_2])
-        ,(10,"maybeMap",[imports, ex10_maybeMap_1, ex10_maybeMap_2])
+tests = [(1,"buildList",[ex1_buildList])
+        ,(2,"sums",[ex2_sums])
+        ,(3,"mylast",[ex3_mylast_nonempty, ex3_mylast_empty])
+        ,(4,"indexDefault",[ex4_indexDefault_ok, ex4_indexDefault_fail])
+        ,(5,"sorted",[ex5_sorted_empty, ex5_sorted])
+        ,(6,"sumsOf",[ex6_sumsOf])
+        ,(7,"merge",[ex7_merge])
+        ,(8,"mymaximum",[ex8_mymaximum_max, ex8_mymaximum_min, ex8_mymaximum_empty])
+        ,(9,"map2",[ex9_map2_1, ex9_map2_2])
+        ,(10,"maybeMap",[ex10_maybeMap_1, ex10_maybeMap_2])
         ]
 
 -- -- -- -- -- --
-
-imports = $(importsOnly "Lab3b" ["GHC.Num", "GHC.Real", "GHC.Base", "GHC.Classes", "GHC.Types",
-                                 "Mooc.Todo", "Mooc.LimitedPrelude"])
 
 ex1_buildList = property $ do
   start <- choose (0,20)

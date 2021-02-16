@@ -65,8 +65,7 @@ distinct (x:xs) = x `notElem` xs && distinct xs
 --   middle 1 7 3        ==> 3
 
 middle :: Ord a => a -> a -> a -> a
-middle x y z = let [_, mid, _] = sort [x, y, z]
-               in mid
+middle x y z = sort [x, y, z] !! 1
 
 ------------------------------------------------------------------------------
 -- Ex 4: return the range of an input list, that is, the difference
@@ -81,8 +80,8 @@ middle x y z = let [_, mid, _] = sort [x, y, z]
 --   rangeOf [4,2,1,3]          ==> 3
 --   rangeOf [1.5,1.0,1.1,1.2]  ==> 0.5
 
-rangeOf :: [a] -> a
-rangeOf = todo
+rangeOf :: (Num a, Ord a) => [a] -> a
+rangeOf xs = maximum xs - minimum xs
 
 ------------------------------------------------------------------------------
 -- Ex 5: given a list of lists, return the longest list. If there
@@ -98,7 +97,12 @@ rangeOf = todo
 --   longest [[1,2,3],[4,5],[6]] ==> [1,2,3]
 --   longest ["bcd","def","ab"] ==> "bcd"
 
-longest = todo
+longest :: Ord a => [[a]] -> [a]
+longest = foldl1 longer
+  where longer x y | length x > length y = x
+                   | length x < length y = y
+                   | head x < head y     = x
+                   | otherwise           = y
 
 ------------------------------------------------------------------------------
 -- Ex 6: Implement the function incrementKey, that takes a list of
@@ -114,8 +118,10 @@ longest = todo
 --   incrementKey True [(True,1),(False,3),(True,4)] ==> [(True,2),(False,3),(True,5)]
 --   incrementKey 'a' [('a',3.4)] ==> [('a',4.4)]
 
-incrementKey :: k -> [(k,v)] -> [(k,v)]
-incrementKey = todo
+incrementKey :: (Eq a, Num b) => a -> [(a, b)] -> [(a, b)]
+incrementKey key = map incPair
+  where incPair (k,v) | k == key  = (k,v+1)
+                      | otherwise = (k,v)
 
 ------------------------------------------------------------------------------
 -- Ex 7: compute the average of a list of values of the Fractional
@@ -130,5 +136,4 @@ incrementKey = todo
 -- length to a Fractional
 
 average :: Fractional a => [a] -> a
-average xs = todo
-
+average xs = sum xs / fromIntegral (length xs)
