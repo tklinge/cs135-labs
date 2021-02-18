@@ -246,8 +246,7 @@ sumRights'' (Right x:xs) = x + sumRights'' xs
 --   multiCompose [(+1), (2^), (3*)] 0 ==> 2
 
 multiCompose :: [a -> a] -> a -> a
-multiCompose [] = id
-multiCompose (f:fs) = f . multiCompose fs
+multiCompose = foldr (.) id
 
 ------------------------------------------------------------------------------
 -- Ex 13: let's consider another way to compose multiple functions. Given
