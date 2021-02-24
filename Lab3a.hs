@@ -301,13 +301,15 @@ multiApp f gs x = f [g x | g <- gs]
 -- function, the surprise won't work.
 
 interpreter :: [String] -> [String]
-interpreter = kernel (0,0)
-  where kernel _ [] = []
-        kernel (x,y) (c:cs) = case c of
-          "up"     -> kernel (x,y+1) cs
-          "down"   -> kernel (x,y-1) cs
-          "left"   -> kernel (x-1,y) cs
-          "right"  -> kernel (x+1,y) cs
-          "printX" -> show x : kernel (x,y) cs
-          "printY" -> show y : kernel (x,y) cs
-          _        -> "invalid command" : kernel (x,y) cs
+interpreter = interpreter' (0,0)
+
+interpreter' :: (Integer, Integer) -> [String] -> [String]
+interpreter' _ [] = []
+interpreter' (x,y) (c:cs) = case c of
+  "up"     -> interpreter' (x,y+1) cs
+  "down"   -> interpreter' (x,y-1) cs
+  "left"   -> interpreter' (x-1,y) cs
+  "right"  -> interpreter' (x+1,y) cs
+  "printX" -> show x : interpreter' (x,y) cs
+  "printY" -> show y : interpreter' (x,y) cs
+  _        -> "invalid command" : interpreter' (x,y) cs
