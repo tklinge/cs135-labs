@@ -22,7 +22,7 @@ tests = [(1,"Vehicle",[ex1])
         ,(8,"Color",[ex8_red, ex8_green, ex8_blue, ex8_simple, ex8_complicated])
         ,(9,"OneOrTwo",[ex9])
         ,(10,"KeyVals",[ex10_type, ex10_string_bool, ex10_int_int])
-        ,(11,"Nat",[ex11_to, ex11_from, ex11_just, ex11_nothing])
+        ,(11,"Nat",[ex11_to, ex11_from, ex11_just])
         ,(12,"Bin",[ex12_from_zero, ex12_to_zero, ex12_to_from_zero
                    , ex12_from_to_zero, ex12_from_one, ex12_to_one
                    , ex12_to_from_one, ex12_from_to_one, ex12_to_from
@@ -187,8 +187,8 @@ ex11_from = $(testing [| fromNat Zero |]) (?== 0)
 ex11_just = forAll_ $ \(n :: Nat) ->
   counterexample ("  toNat (fromNat " ++ show n ++ ")")
   (toNat (fromNat n) ?== Just n)
-ex11_nothing = forAll_ $ \(Negative (z :: Int)) ->
-  $(testing [|toNat z|]) (?== Nothing)
+-- ex11_nothing = forAll_ $ \(Negative (z :: Int)) ->
+--   $(testing [|toNat z|]) (?== Nothing)
 
 instance Arbitrary Bin where
   arbitrary = do
